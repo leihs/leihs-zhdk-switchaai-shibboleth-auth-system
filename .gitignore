@@ -1,0 +1,4 @@
+**tmp/
+deploy/*.retry
+*.log
+*.pid*

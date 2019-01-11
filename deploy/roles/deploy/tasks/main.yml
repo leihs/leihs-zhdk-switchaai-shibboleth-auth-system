@@ -1,0 +1,8 @@
+- include_tasks: install-mod-shib.yml
+- include_tasks: ruby-install.yml
+- include_tasks: install-passenger.yml
+- include_tasks: setup-user.yml
+- include_tasks: install-project.yml
+- include_tasks: install-ruby.yml
+- include_tasks: configure-app.yml
+- include_tasks: setup-passenger-app.yml

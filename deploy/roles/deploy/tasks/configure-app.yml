@@ -1,0 +1,5 @@
+- name: config file
+  template: 
+    src: config.yml
+    dest: '{{app_dir}}/config.yml'
+

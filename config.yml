@@ -1,0 +1,24 @@
+# this is a development and example configuration file
+# it is overwritten during deployment! 
+# 
+
+my_external_base_url: 'http://localhost:4000'
+
+my_private_key: |
+  -----BEGIN EC PRIVATE KEY-----
+  MHcCAQEEIHErTjw8Z1yNisngEuZ5UvBn1qM2goN3Wd1V4Pn3xQeYoAoGCCqGSM49
+  AwEHoUQDQgAEzGT0FBI/bvn21TOuLmkzDwzRsIuOyIf9APV7DAZr3fgCqG1wzXce
+  MGG42wJIDRduJ9gb3LJiewqzq6VVURvyKQ==
+  -----END EC PRIVATE KEY-----
+
+my_public_key: |
+  -----BEGIN PUBLIC KEY-----
+  MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzGT0FBI/bvn21TOuLmkzDwzRsIuO
+  yIf9APV7DAZr3fgCqG1wzXceMGG42wJIDRduJ9gb3LJiewqzq6VVURvyKQ==
+  -----END PUBLIC KEY-----
+
+leihs_public_key: |
+  -----BEGIN PUBLIC KEY-----
+  MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzGT0FBI/bvn21TOuLmkzDwzRsIuO
+  yIf9APV7DAZr3fgCqG1wzXceMGG42wJIDRduJ9gb3LJiewqzq6VVURvyKQ==
+  -----END PUBLIC KEY-----

@@ -1,0 +1,13 @@
+app_name: zhdk-aai-shibboleth-leihs-auth
+app_dir: /{{app_name}}
+app_ruby_version: 2.6.0
+app_user: '{{app_name}}'
+
+
+apache2_modules:
+  - expires
+  - headers
+  - proxy
+  - proxy_http
+  - rewrite
+  - ssl
