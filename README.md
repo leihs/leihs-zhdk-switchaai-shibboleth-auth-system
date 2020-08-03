@@ -2,11 +2,11 @@ ZHdK Switch-AAI Shibboleth leihs Authentication-System
 ======================================================
 
 This repository hosts code to authenticate users via
-[SWITCHaai](https://www.switch.ch/aai/) for the [_leihs_](https://github.com/leihs/leihs) 
+[SWITCHaai](https://www.switch.ch/aai/) for the [_leihs_](https://github.com/leihs/leihs)
 instance of the ZHdK.
 
 The resulting service uses the external authentication-system (TODO link to
-documentation) of leihs. 
+documentation) of leihs.
 
 
 Production Set-up and Deployment
@@ -23,25 +23,39 @@ and register your application with the [AAI Resource Registry](https://rr.aai.sw
 
 At the time of writing Switch files for Shibboleth 3.0 werent available yet for
 Debian 9. It is possible to install shiboleth 2.6 and using the documentation
-for version 2.5 
+for version 2.5
 
 * https://www.switch.ch/aai/guides/sp/configuration-2.5/?osType=nonwindows&os=debian&federation=SWITCHaai&hostname=aai.leihs.zhdk.ch&entityID=https%3A%2F%2Faai.leihs.zhdk.ch%2Fshibboleth&configDir=%2Fetc%2Fshibboleth%2F&keyPath=%2Fetc%2Fshibboleth%2Fsp-key.pem&certPath=%2Fetc%2Fshibboleth%2Fsp-cert.pem&targetURL=https%3A%2F%2Faai.leihs.zhdk.ch%2FShibboleth.sso%2FSession&supportEmail=aai%40aai.leihs.zhdk.ch&submit=Update+Configuration+Guide+with+above+Data#setupprofile
 
- 
-### Deployment 
 
-This project comes with deployment recipies for [ansible](https://docs.ansible.com/). An example invocation 
-looks like the following:
+### Deployment
 
-		ansible-playbook -i ../zhdk-inventory/aai-hosts  deploy/deploy_play.yml 
+This project comes with deployment recipes for [ansible](https://docs.ansible.com/).
 
-We reference our [leihs ZHdK Inventory](https://github.com/leihs/leihs_zhdk-inventory) here. 
+An example invocation looks like the following:
+
+		ansible-playbook -i ../zhdk-inventory/aai-hosts  deploy/deploy_play.yml
+
+We reference our [leihs ZHdK Inventory](https://github.com/leihs/leihs_zhdk-inventory) here.
 
 
-Development 
+#### Installing a Deployment-Environment
+
+We recommend to install a compatible `ansible` version as follows:
+
+```
+python3 -m venv tmp/venv
+source tmp/venv/bin/activate
+pip install -r deploy/requirements.txt
+```
+
+This requires Python 3.7 or later.
+
+
+Development
 -----------
 
-### Run the application 
+### Run the application
 
 1. Install ruby version >= 2.6.0, e.g. with [ruby-install](https://github.com/postmodern/ruby-install).
 
@@ -63,15 +77,15 @@ Development
 
 ### Prototyping and debugging
 
-Try 
+Try
 
 		curl http://localhost:4000/debug
 
-and 
+and
 
 		bundle exec pry-remote
 
 in a separate terminal.
-	
+
 
 

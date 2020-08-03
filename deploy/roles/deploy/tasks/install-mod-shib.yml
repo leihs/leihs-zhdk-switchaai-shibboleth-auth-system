@@ -7,14 +7,14 @@
       - apache2
 
 - name: Enable apache modules
-  shell:  a2enmod {{item}}
-  register: result
+  apache2_module:
+    state: present
+    name: '{{item}}'
   with_items: '{{apache2_modules}}'
-  changed_when: result.stdout | search("Enabling module")
 
-- name: Add switch apt key 
-  apt_key: 
-    url: http://pkg.switch.ch/switchaai/SWITCHaai-swdistrib.asc 
+- name: Add switch apt key
+  apt_key:
+    url: http://pkg.switch.ch/switchaai/SWITCHaai-swdistrib.asc
     state: present
     id: 294E37D154156E00FB96D7AA26C3C46915B76742
 

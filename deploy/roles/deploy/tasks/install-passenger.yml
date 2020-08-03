@@ -7,20 +7,20 @@
       - apache2
 
 - name: Enable apache modules
-  shell:  a2enmod {{item}}
-  register: result
+  apache2_module:
+    state: present
+    name: '{{item}}'
   with_items: '{{apache2_modules}}'
-  changed_when: result.stdout | search("Enabling module")
 
-- name: Add phusionpassenger apt key 
-  apt_key: 
+- name: Add phusionpassenger apt key
+  apt_key:
     keyserver: hkp://keyserver.ubuntu.com:80
     id: 561F9B9CAC40B2F7
     state: present
 
 - name: Add phusionpassenger apt repo
   apt_repository:
-    repo: deb https://oss-binaries.phusionpassenger.com/apt/passenger stretch main 
+    repo: deb https://oss-binaries.phusionpassenger.com/apt/passenger stretch main
     state: present
 
 - name: Install libapache2-mod-passenger

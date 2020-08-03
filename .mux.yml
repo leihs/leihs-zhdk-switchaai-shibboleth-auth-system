@@ -1,0 +1,10 @@
+name: LEIHS/zhdk-aai-shibboleth-auth-system
+windows:
+  2:
+    name: app
+    command: |
+      bundle exec passenger start --port 4000
+  5:
+    name: deploy
+    command: |
+      # ansible-playbook -i ../leihs_v5/zhdk-inventory/aai-hosts deploy/deploy_play.yml --ssh-common-args '-o ProxyCommand="ssh -W %h:%p -q root@ci.zhdk.ch"'
