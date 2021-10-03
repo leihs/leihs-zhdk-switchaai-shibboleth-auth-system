@@ -1,5 +1,0 @@
-- hosts: leihs_aai
-
-  roles: 
-
-  - role: deploy
